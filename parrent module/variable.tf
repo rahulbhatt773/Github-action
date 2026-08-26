@@ -1,3 +1,6 @@
-variable "rgs" {}
-variable "subnet" {}
-variable "vnet" {}
+variable "rgs" {
+  type = map(object({
+    name     = string
+    location = string
+  }))
+}
