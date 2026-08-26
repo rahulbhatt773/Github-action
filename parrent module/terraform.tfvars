@@ -12,6 +12,10 @@ rgs = {
     name     = "bhatt3_rg"
     location = "centralindia"
   }
+   rg4 = {
+    name     = "bhatt4_rg"
+    location = "centralindia"
+  }
 }
 
 vnet = {
