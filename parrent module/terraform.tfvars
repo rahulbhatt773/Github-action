@@ -20,6 +20,10 @@ rgs = {
     name     = "deeru"
     location = "centralindia"
   }
+  rg6 = {
+    name     = "deeru2"
+    location = "centralindia"
+  }
 }
 
 vnet = {
