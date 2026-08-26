@@ -1,4 +1,3 @@
-#ci Pipeline Code
 name: Terraform
 
 on:
@@ -20,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Github-action/parrent module
+        working-directory: parrent module
 
     steps:
 
@@ -73,6 +72,12 @@ jobs:
         with:
           directory: parrent module
      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
       - name: Azure Login
         run: |
           az login \
@@ -104,17 +109,15 @@ jobs:
   terraform-apply:
     name: Terraform Apply
     runs-on: ubuntu-latest
-  
+
     needs: terraform-plan
-	
+
     # Apply ONLY after push to main
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
-#CD Pipeline Code 	
-
     defaults:
       run:
-        working-directory: Github-action/parrent module
+        working-directory: parrent module
 
     steps:
       - name: Checkout code
